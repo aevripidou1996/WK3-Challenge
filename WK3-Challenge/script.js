@@ -1,7 +1,9 @@
-var button = document.querySelector ('#generate');
+var button = document.querySelector('#generate');
 
-function generatePassword() 
+function generatePassword(){
   var
+
+
 
 
 //Array information//
@@ -14,33 +16,52 @@ var characters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+
 var resultArray = [];
 var userArray = [];
 
-uppercaseLetters [1]
+uppercaseLetters[1]
 
-var numChareacter = prompt ('How many numbers & characters would you like in your password?');
-var numbers = confirm ("Would you like numbers in your password?");
-var uppercase = confirm ('Would you like uppercase letters in your password?');
-var lowercase = confirm ('Would you like lower case letters in your password?');
-var characters = confirm ("Would you like special characters in your password?");
-
-
+var numChareacter = prompt('How many numbers & characters would you like in your password?');
+var numbers = confirm("Would you like numbers in your password?");
+var uppercase = confirm('Would you like uppercase letters in your password?');
+var lowercase = confirm('Would you like lower case letters in your password?');
+var characters = confirm("Would you like special characters in your password?");
+}
 
 
 //if Statments
-if (numbers){
+if (numbers) {
   resultArray = resultArray.concat(numbers);
 
 }
 
-if (uppercase){
+if (uppercase) {
   resultArray = resultArray.concat(uppercaseLetters);
 }
 
-if (lowercase){
+if (lowercase) {
   resultArray = resultArray.concat(lowercaseLetters);
 }
 
-if(characters){
+if (characters) {
   resultArray = resultArray.concat(characters);
 }
 console.log(resultArray);
 
+for (var i = 0; i < numCharacter; i++) {
+  userArray.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
+}
+
+return userArray.join("");
+}
+
+//create a pasword
+function writePassword(){
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+}
+
+
+function copyToClipboard(){
+}
+
+generatePassword.addEventListener('click', writePassword);
