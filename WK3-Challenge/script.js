@@ -6,8 +6,8 @@ function generatePassword() {
   //Array information//
   var uppercaseLetters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', "l", 'M', "N", 'O', 'P', "Q", "R", "S", 'T', 'U', 'V', "W", "X", 'Y', 'Z'];
   var lowercaseLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', "n", 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  var numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
-  var characters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '='];
+  var numbersArray = [1, 2, 3, 4, 5, 6, 7, 8, 9,];
+  var charactersArray = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '='];
 
 
 
@@ -21,11 +21,9 @@ function generatePassword() {
   var resultArray = [];
   var userArray = [];
 
-  uppercaseArray [1]
-
 
   if (numbers) {
-    resultArray = resultArray.concat(numbers);
+    resultArray = resultArray.concat(numbersArray);
   
   }
   
@@ -38,14 +36,17 @@ function generatePassword() {
   }
   
   if (characters) {
-    resultArray = resultArray.concat(characters);
+    resultArray = resultArray.concat(charactersArray);
   }
   console.log(resultArray);
   
   for (var i = 0; i < numChareacter; i++) {
     userArray.push(resultArray[Math.floor(Math.random() * resultArray.length)]);
   }
-  
+  console.log(userArray)
+  var generatedPassword = userArray.join("")
+  console.log(generatedPassword)
+  return generatedPassword
 }
 
 
@@ -53,7 +54,6 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
   passwordText.value = password;
 }
 
@@ -61,4 +61,5 @@ function writePassword() {
 function copyToClipboard() {
 }
 
-generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword,);
+
