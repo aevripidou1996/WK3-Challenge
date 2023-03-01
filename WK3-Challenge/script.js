@@ -1,4 +1,4 @@
-var button = document.querySelector('#generate');
+var generateBtn = document.querySelector('#generate');
 
 function generatePassword() {
 
@@ -10,16 +10,18 @@ function generatePassword() {
   var characters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '-', '_', '+', '='];
 
 
-  var resultArray = [];
-  var userArray = [];
-
-  // uppercaseLetters[0]
 
   var numChareacter = prompt('How many numbers & characters would you like in your password?');
   var numbers = confirm("Would you like numbers in your password?");
   var uppercase = confirm('Would you like uppercase letters in your password?');
   var lowercase = confirm('Would you like lower case letters in your password?');
   var characters = confirm("Would you like special characters in your password?");
+
+
+  var resultArray = [];
+  var userArray = [];
+
+  uppercaseArray [1]
 
 
   if (numbers) {
@@ -47,12 +49,6 @@ function generatePassword() {
 }
 
 
-//if Statments
-
-// return userArray.join("");
-
-
-
 //create a pasword
 function writePassword() {
   var password = generatePassword();
@@ -65,4 +61,4 @@ function writePassword() {
 function copyToClipboard() {
 }
 
-button.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword);
